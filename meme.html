@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+
     <style>
         html, body {
             margin: 0;
@@ -23,15 +24,25 @@
 
 <body>
 
-    <video id="memeVideo" autoplay loop playsinline>
+    <video id="memeVideo" playsinline preload="auto">
         <source src="introvert.webm" type="video/webm">
     </video>
 
     <script>
         const video = document.getElementById("memeVideo");
+        const startTime = 3;
 
         video.addEventListener("loadedmetadata", function () {
-            video.currentTime = 5;
+            video.currentTime = startTime;
+        });
+
+        video.addEventListener("seeked", function startVideo() {
+            video.play();
+            video.removeEventListener("seeked", startVideo);
+        });
+
+        video.addEventListener("ended", function () {
+            video.currentTime = startTime;
             video.play();
         });
     </script>
