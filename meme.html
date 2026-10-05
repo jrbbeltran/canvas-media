@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="UTF-8">
-
     <style>
         html, body {
             margin: 0;
@@ -24,9 +23,18 @@
 
 <body>
 
-    <video autoplay loop playsinline>
+    <video id="memeVideo" autoplay loop playsinline>
         <source src="introvert.webm" type="video/webm">
     </video>
+
+    <script>
+        const video = document.getElementById("memeVideo");
+
+        video.addEventListener("loadedmetadata", function () {
+            video.currentTime = 3;
+            video.play();
+        });
+    </script>
 
 </body>
 </html>
