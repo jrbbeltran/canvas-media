@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: transparent;
-    }
+    <meta charset="UTF-8">
 
-    video {
-      width: 100%;
-      height: 100vh;
-      object-fit: contain;
-      display: block;
-    }
-  </style>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
 
-<video autoplay loop muted playsinline>
-  <source src="introvert.webm" type="video/webm">
-</video>
+    <video autoplay muted loop playsinline controls>
+        <source src="introvert.webm" type="video/webm">
+    </video>
 
 </body>
 </html>
