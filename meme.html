@@ -1,51 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme of the Week</title>
 
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background: transparent;
-        }
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
 
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-    </style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
 
-    <video id="memeVideo" playsinline preload="auto">
-        <source src="introvert.webm" type="video/webm">
-    </video>
-
-    <script>
-        const video = document.getElementById("memeVideo");
-        const startTime = 3;
-
-        video.addEventListener("loadedmetadata", function () {
-            video.currentTime = startTime;
-        });
-
-        video.addEventListener("seeked", function startVideo() {
-            video.play();
-            video.removeEventListener("seeked", startVideo);
-        });
-
-        video.addEventListener("ended", function () {
-            video.currentTime = startTime;
-            video.play();
-        });
-    </script>
+  <video autoplay loop playsinline>
+    <source src="introvert_edit.webm" type="video/webm">
+  </video>
 
 </body>
 </html>
